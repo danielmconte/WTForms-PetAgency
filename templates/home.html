@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Pets</h1>
+    <form action="/add">
+        <button>Add Pet</button>
+    </form>
+    {% for pet in pets%}
+    <h2>{{pet.name}}<a href="/{{pet.id}}">   Edit</a></h2>
+    <img src={{pet.photo_url}}>
+    {% if pet.available == True %}
+    <h3>Available</h3>
+    {%else%}
+    <h3>Not Available</h3>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>
